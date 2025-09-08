@@ -181,26 +181,15 @@ mysql < /tmp/sqld_YYYYmmdd_HHMMSS.sql
 - **운영**: 매일 1회 전체 덤프 + 7~30일 보관  
 - **파일명 규칙**: `<DB>_<YYYYmmdd_HHMMSS>.tar.gz`  
   - 예) `sqld_20250908_090000.tar.gz`
----
 
-### 🌐 벤더사 문서 비교
-| 벤더사 | 백업 방법 | 복원 방법 | 특징 |
-|--------|-----------|-----------|------|
-| Kakao Cloud | 콘솔에서 자동 백업 설정, 보존 기간 지정 | 콘솔/CLI 복원 | 자동화 내장 |
-| AWS RDS | 스냅샷, PITR 지원 | 콘솔/CLI 복원 | 고가용성, 리전별 백업 |
-| GCP Cloud SQL | 자동/수동 백업 | 콘솔/CLI 복원 | 구글 스토리지 연계 |
-| Naver Cloud | 자동 백업, 주기 설정 | 콘솔/CLI 복원 | 간단한 설정 제공 |
-| 직접 설치(MySQL) | cron + dump + tar | `mysql < dump.sql` | 수동 구현 필요 |
-
----
+<br>
 
 ### 🛡️ 보안 및 운영 팁
 - `~/.my.cnf` 권한 `600` 유지 (비밀번호 노출 방지)  
 - 백업 디렉토리 접근 권한 최소화  
 - 원격/다중 보관소에 2차 백업 권장  
 - 주기적 **복원 리허설**로 실제 복구 가능성 검증
-
----
+<br>
 
 ### 🔍 참고 문서
 - [MySQL 공식 매뉴얼 – Backup and Recovery](https://dev.mysql.com/doc/refman/8.0/en/backup-and-recovery.html)  
@@ -227,3 +216,10 @@ mysql < /tmp/sqld_YYYYmmdd_HHMMSS.sql
 <br>
 - 해결 : 운영 환경에서는 PROCESS 권한을 주는 게 부담될 수 있으므로, `--no-tablespaces` 옵션을 추가해 덤프 시 tablespaces 정보를 제외
 </details>
+
+---
+
+## 📝 회고
+
+실무에서 안정적 서비스 운영을 위해 반드시 고려해야 할 **백업 체계의 중요성**을 체감했고,
+이 경험을 바탕으로 실제 환경에서도 **데이터 안정성과 신뢰성**을 지키는 개발자로 성장하고자 한다.
