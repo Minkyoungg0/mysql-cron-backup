@@ -51,7 +51,7 @@ MySQL 자동 백업 시스템을 설계·구현하여, 운영 환경에서 데�
 │   ├── tar.gz 압축
 │   └── 무결성 검사 + 삭제
 │
-├── ⏰ 자동화 (cron) # `cron`으로 매일 오전 9시 실행
+├── ⏰ 자동화 (cron)
 │    └── 매일 09:00
 │   
 │
@@ -69,7 +69,7 @@ MySQL 자동 백업 시스템을 설계·구현하여, 운영 환경에서 데�
 - OS : Ubuntu 22.04 LTS  
 - DBMS : MySQL Server 8.0.43
 - 언어/도구 : Bash Script, cron, mysqldump, tar  
-- 경로 구조 : `/home/ubuntu/db-backups` (백업 저장소)
+- 백업 저장소 : `/home/ubuntu/db-backups`
 
 ---
 
